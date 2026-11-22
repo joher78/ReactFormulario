@@ -53,6 +53,7 @@ export function UsuarioContextProvider(props: Props) {
 
   function eliminarUsuario(id:number) {
     console.log("elimina " + id)
+    setUsuarios(usuarios.filter((x) => x.id !== id))
   }
 
   return (

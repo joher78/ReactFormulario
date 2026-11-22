@@ -4,7 +4,7 @@ import useUsers from "../hooks/useUsers.ts";
 
 
 const Usuario = () => {
-  const { usuarios } = useUsers();
+  const { usuarios, eliminarUsuario } = useUsers();
   return (
   <div className="container table-responsive">
       <h2>Listado de usuarios</h2>
@@ -21,6 +21,7 @@ const Usuario = () => {
             <th>Estado civil</th>
             <th>Grado estudio</th>
             <th>Teléfono</th>
+            <th>acciones</th>
           </tr>
         </thead>
 
@@ -36,6 +37,9 @@ const Usuario = () => {
               <td>{usuario.estadoCivil}</td>
               <td>{usuario.gradoEstudio}</td>
               <td>{usuario.telefono}</td>
+              <td>
+                <a className="btn btn-danger" onClick={()=> eliminarUsuario(usuario.id)} >eliminar</a>
+              </td>
             </tr>
           ))}
         </tbody>
