@@ -1,10 +1,9 @@
-import { UsuarioModel } from '../../domain/models/UsuarioModel';
+import type { UsuarioModel } from "../../domain/models/UsuarioModel";
+
 
 export class UsuariosMockRepository {
 
-  async usuarioList (): 
-  
- Promise <UsuarioModel[]> ={
+  async usuarioList (): Promise <UsuarioModel[]>  {
  return [
   {
     id: 1,

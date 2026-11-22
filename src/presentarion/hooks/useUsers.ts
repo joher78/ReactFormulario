@@ -1,18 +1,19 @@
-import React from 'react'
+
+import { useContext } from "react";
+import UsuarioContext from "../context/UsuarioContext";
 
 
 function useUsers() {
 
-  const[usuarios, setUsuarios] = useState([]);
+ 
+  const context = useContext(UsuarioContext)
 
-  useEffect(() => {
-    setUsuarios(usuarioAdapter)
-  }, [])
+ if(!context){
+  throw new Error("arguments");
+ }
+
+ return context
   
-  
-  return {
-    usuarios
-  };
 }
 
 export default useUsers;
